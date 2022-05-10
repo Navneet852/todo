@@ -1,0 +1,71 @@
+<html>
+
+<head>
+	<title>To-Do</title>
+	<style>
+		body {
+			display: flex;
+			justify-content: center;
+			/* background-image: linear-gradient(60deg, blue, pink); */
+		}
+
+		.main {
+			height: 60%;
+			width: 80%;
+			
+			border-radius: 20px;
+			background-color: rgb(233, 244, 255);
+			padding: 5px;
+		}
+		.main:hover{
+			box-shadow: -2px -1px 20px black;
+			
+		}
+		
+		#data {
+			height: 85%;
+			width: 100%;
+			border: 1px solid;
+			overflow: scroll;
+			background-image: linear-gradient(-40deg, white, rgb(230, 253, 255));
+		}
+
+		input {
+			margin: 5px;
+			outline: none;
+           
+		}
+		h4{
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="main">
+		<input type="text" class="text" placeholder="Add to do item">
+		<input class="add" type="button" value="Add">
+		<div id="data">
+			<h4>DESCRIPTION</h1>
+				<ol>
+
+				</ol>
+		</div>
+
+	</div>
+
+	<script>
+		let input = document.querySelector('.text');
+		let submit = document.querySelector('.add');
+		let data = document.querySelector('#data');
+		let ol = document.querySelector('ol');
+		submit.addEventListener("click", () => {
+
+			let list = document.createElement('li');
+			list.textContent = input.value;
+			ol.append(list);
+			data.append(ol);
+		});
+
+	</script>
+</body>
